@@ -1,12 +1,14 @@
 #root {
     --color-background-color: #f3f3f3;
-    --color-text-color: #000;
+    --color-text-color: #1c1c1c;
     --color-lightgray-color: #d8d8d8;
     --color-gray-color: #8c8c8c;
     --color-brand-color: #e4c5c5;
 
     --color-accept-color: #49c6af;
     --color-deny-color: #c64949;
+
+    --transition-duration: 0.3s;
 }
 
 body {

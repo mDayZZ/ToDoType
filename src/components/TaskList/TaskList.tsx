@@ -1,11 +1,11 @@
 import classes from './TaskList.module.scss'
 import TaskItem from "../TaskItem/TaskItem.tsx";
-import {ITaskListProps} from "./TaskList.interface.ts";
+import {ITaskListProps} from "./TaskList.interfaces.ts";
 
 const TaskList = ({tasks, onCheckTask}: ITaskListProps) => {
     return (
         <ul className={classes.taskList}>
-            {tasks.map(task => <li><TaskItem task={task} onCheckTask={onCheckTask}/></li>)}
+            {tasks.map(task => <li key={task.id}><TaskItem task={task} onCheckTask={onCheckTask}/></li>)}
         </ul>
     );
 };

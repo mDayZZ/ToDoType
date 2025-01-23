@@ -1,1 +1,2 @@
-export type onCheckTaskType = (taskId: string) => void
+export type OnCheckTaskType = (taskId: string) => void
+export type OnAddTaskType = (taskText: string) => void

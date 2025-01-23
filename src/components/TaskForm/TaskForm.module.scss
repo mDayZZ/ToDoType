@@ -15,6 +15,7 @@
     align-items: center;
     aspect-ratio: 1;
     cursor: pointer;
+    transition-duration: var(--transition-duration);
 
     &:hover {
       //background-color: var(--color-lightgray-color);
@@ -23,8 +24,12 @@
     &:active {
       //background-color: var(--color-lightgray-color);
       color: var(--color-text-color);
-      box-shadow: inset 0px 0px 2px 0px var(--color-lightgray-color);
+      box-shadow: inset 1px 1px 8px 0px var(--color-lightgray-color);
+      transition-duration: 0s;
     }
+  }
+  &__input {
+    padding-block: 10px !important;
   }
 }
 

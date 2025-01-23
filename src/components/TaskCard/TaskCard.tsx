@@ -2,17 +2,21 @@ import classes from './TaskCard.module.scss';
 import TaskForm from "../TaskForm/TaskForm.tsx";
 import {useState} from "react";
 import TaskList from "../TaskList/TaskList.tsx";
-import {ITaskItem} from "../TaskItem/TaskItem.interface.ts";
-import {onCheckTaskType} from "./TaskCard.interfaces.ts";
+import {ITaskItem} from "../TaskItem/TaskItem.interfaces.ts";
+import {AddTaskType, OnCheckTaskType} from "./TaskCard.interfaces.ts";
+import TaskCardFooter from "../TaskCardFooter/TaskCardFooter.tsx";
+import { v4 as uuidv4 } from 'uuid';
 
 const TaskCard = () => {
+    const taskCardId = '101';
     const [tasks, setTasks] = useState<ITaskItem[]>(
         [
             {id: 'dw12-2', cardId: '101', text: 'Тестовое задание', isCompleted: false},
             {id: 'dw12-3', cardId: '101', text: 'Прекрасный код', isCompleted: true},
             {id: 'dw12-4', cardId: '101', text: 'Покрытие тестами', isCompleted: false},
         ]);
-    const onCheckTask : onCheckTaskType = (taskId) => {
+
+    const onCheckTask : OnCheckTaskType = (taskId) => {
         const updatedTasks = tasks.map(task => {
             if (task.id !== taskId) {
                 return task
@@ -23,11 +27,22 @@ const TaskCard = () => {
         setTasks(updatedTasks);
     }
 
+    const onAddTask: AddTaskType = (taskText) => {
+        const newTask: ITaskItem = {
+            id: uuidv4(),
+            cardId: taskCardId,
+            text: taskText,
+            isCompleted: false,
+        };
+        setTasks(prevState => [newTask, ...prevState]);
+    }
+
 
     return (
         <div className={classes.taskCard}>
-            <TaskForm />
+            <TaskForm onAddTask={onAddTask}/>
             <TaskList tasks={tasks} onCheckTask={onCheckTask} />
+            <TaskCardFooter/>
         </div>
     );
 };

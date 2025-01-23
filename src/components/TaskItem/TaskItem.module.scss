@@ -1,3 +1,19 @@
 .taskItem {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  padding: 4px;
+  gap: 6px;
+  border: 1px solid var(--color-lightgray-color);
 
+  &__text {
+    font-weight: 300;
+    color: var(--color-text-color);
+    transition-duration: var(--transition-duration);
+  }
+
+  &__text[data-iscompleted='true'] {
+    color: var(--color-lightgray-color);
+    text-decoration: line-through;
+  }
 }

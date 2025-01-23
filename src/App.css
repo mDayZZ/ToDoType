@@ -1,0 +1,25 @@
+#root {
+    --color-background-color: #f3f3f3;
+    --color-text-color: #000;
+    --color-lightgray-color: #d8d8d8;
+    --color-gray-color: #8c8c8c;
+    --color-brand-color: #e4c5c5;
+
+    --color-accept-color: #49c6af;
+    --color-deny-color: #c64949;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+
+main {
+    background-color: var(--color-background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}

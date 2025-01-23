@@ -1,0 +1,30 @@
+.taskForm {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  box-shadow: 0 1px 4px 0 var(--color-lightgray-color);
+
+  &__button{
+    background-color: transparent;
+    color: var(--color-lightgray-color);
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    cursor: pointer;
+
+    &:hover {
+      //background-color: var(--color-lightgray-color);
+      color: var(--color-gray-color);
+    }
+    &:active {
+      //background-color: var(--color-lightgray-color);
+      color: var(--color-text-color);
+      box-shadow: inset 0px 0px 2px 0px var(--color-lightgray-color);
+    }
+  }
+}
+

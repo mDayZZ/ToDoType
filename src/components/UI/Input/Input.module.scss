@@ -1,0 +1,16 @@
+.Input {
+  margin: 0;
+  padding: 2px 6px 2px 6px;
+  outline: none;
+  border: none;
+
+  &::placeholder {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-lightgray-color);
+  }
+
+  &:active {
+
+  }
+}

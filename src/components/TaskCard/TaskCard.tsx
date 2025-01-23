@@ -3,7 +3,7 @@ import TaskForm from "../TaskForm/TaskForm.tsx";
 import {useState} from "react";
 import TaskList from "../TaskList/TaskList.tsx";
 import {ITaskItem} from "../TaskItem/TaskItem.interfaces.ts";
-import {AddTaskType, OnCheckTaskType} from "./TaskCard.interfaces.ts";
+import {OnAddTaskType, OnCheckTaskType} from "./TaskCard.interfaces.ts";
 import TaskCardFooter from "../TaskCardFooter/TaskCardFooter.tsx";
 import { v4 as uuidv4 } from 'uuid';
 
@@ -27,7 +27,7 @@ const TaskCard = () => {
         setTasks(updatedTasks);
     }
 
-    const onAddTask: AddTaskType = (taskText) => {
+    const onAddTask: OnAddTaskType = (taskText) => {
         const newTask: ITaskItem = {
             id: uuidv4(),
             cardId: taskCardId,

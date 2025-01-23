@@ -1,23 +1,14 @@
-import {ITaskItemProps, TaskStatus} from "./TaskItem.interface.ts";
+import {ITaskItemProps} from "./TaskItem.interface.ts";
 import classes from './TaskItem.module.scss';
 import TaskCheckbox from "../UI/TaskCheckbox/TaskCheckbox.tsx";
-const TaskItem = ({task}: ITaskItemProps) => {
-    const getIsCheckedFromStatus = (status: TaskStatus): boolean => {
-        if (status === TaskStatus.Active) {
-            return true;
-        }
+const TaskItem = ({task, onCheckTask}: ITaskItemProps) => {
 
-        if (status === TaskStatus.Completed) {
-            return true;
-        }
-        return false;
-    }
+    const isChecked = task.isCompleted;
+    const handleCheckTask = () => onCheckTask(task.id);
 
-
-    const isChecked = getIsCheckedFromStatus(task.status);
     return (
         <div className={classes.taskItem} style={classes}>
-            <TaskCheckbox checked={isChecked}></TaskCheckbox>
+            <TaskCheckbox checked={isChecked} onChange={handleCheckTask}></TaskCheckbox>
             <p>{task.text}</p>
         </div>
     );

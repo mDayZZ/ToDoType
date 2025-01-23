@@ -1,50 +1,19 @@
-# React + TypeScript + Vite
+# Todo List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This Todo List application is a test project demonstrating the usage of modern web development technologies, including React, React Hooks, TypeScript, Jest and GitHub Actions for deployment.
+## Features
+- **Add Todo Items:** Users can add new tasks to the list
+- **Mark Tasks as Completed:** Tasks can be marked as completed by clicking on them
+- **Delete Todo Items:** Users can remove tasks from the list
+- **Task filtering by status**
+- **Tasks counter**.
 
-Currently, two official plugins are available:
+[//]: # (- Persistent State: The list is stored in local storage, so tasks persist across page reloads.)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Technologies Used
+- **React:** For building the user interface
+- **React Hooks:** For managing state and side effects
+- **TypeScript:** For adding static type checking and improving code quality
+- **Jest:** For writing unit tests for core functionality
+- **GitHub Actions:** For continuous integration and deployment (CI/CD)
+- **GitHub Pages:** For hosting the live app.

@@ -9,12 +9,11 @@ import { v4 as uuidv4 } from 'uuid';
 import {useFilterTasks} from "../../hooks/useFilterTasks.ts";
 
 const TaskCard = () => {
-    const taskCardId = '101';
     const [tasks, setTasks] = useState<ITaskItem[]>(
         [
-            {id: 'dw12-2', cardId: '101', text: 'Тестовое задание', isCompleted: false},
-            {id: 'dw12-3', cardId: '101', text: 'Прекрасный код', isCompleted: true},
-            {id: 'dw12-4', cardId: '101', text: 'Покрытие тестами', isCompleted: false},
+            {id: 'dw12-2', text: 'Тестовое задание', isCompleted: false},
+            {id: 'dw12-3', text: 'Прекрасный код', isCompleted: true},
+            {id: 'dw12-4', text: 'Покрытие тестами', isCompleted: false},
         ]);
 
     const [filteredTasks, filterMode, setFilterMode] = useFilterTasks(tasks);
@@ -35,7 +34,6 @@ const TaskCard = () => {
     const onAddTask: OnAddTaskType = (taskText) => {
         const newTask: ITaskItem = {
             id: uuidv4(),
-            cardId: taskCardId,
             text: taskText,
             isCompleted: false,
         };

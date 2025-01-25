@@ -1,5 +1,7 @@
 .taskList {
   list-style: none;
+  max-height: 50vh;
+  overflow: auto;
 
   &__voidList {
     display: flex;

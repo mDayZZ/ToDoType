@@ -8,7 +8,6 @@ export interface ITaskItemProps {
 
 export interface ITaskItem {
     id: string,
-    cardId: string,
     text: string,
     isCompleted: boolean,
 }

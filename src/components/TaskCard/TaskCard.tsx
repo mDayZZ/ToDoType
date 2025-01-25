@@ -3,9 +3,10 @@ import TaskForm from "../TaskForm/TaskForm.tsx";
 import {useState} from "react";
 import TaskList from "../TaskList/TaskList.tsx";
 import {ITaskItem} from "../TaskItem/TaskItem.interfaces.ts";
-import {OnAddTaskType, OnCheckTaskType} from "./TaskCard.interfaces.ts";
+import {OnAddTaskType, OnCheckTaskType, OnDeleteTaskType} from "./TaskCard.interfaces.ts";
 import TaskCardFooter from "../TaskCardFooter/TaskCardFooter.tsx";
 import { v4 as uuidv4 } from 'uuid';
+import {useFilterTasks} from "../../hooks/useFilterTasks.ts";
 
 const TaskCard = () => {
     const taskCardId = '101';
@@ -15,6 +16,10 @@ const TaskCard = () => {
             {id: 'dw12-3', cardId: '101', text: 'Прекрасный код', isCompleted: true},
             {id: 'dw12-4', cardId: '101', text: 'Покрытие тестами', isCompleted: false},
         ]);
+
+    const [filteredTasks, filterMode, setFilterMode] = useFilterTasks(tasks);
+
+
 
     const onCheckTask : OnCheckTaskType = (taskId) => {
         const updatedTasks = tasks.map(task => {
@@ -37,12 +42,22 @@ const TaskCard = () => {
         setTasks(prevState => [newTask, ...prevState]);
     }
 
+    const onClearCompletedTasks = () => {
+        const newTasks: ITaskItem[] = tasks.filter(task => !task.isCompleted);
+        setTasks(newTasks);
+    }
+
+    const onDeleteTask: OnDeleteTaskType = (taskId) => {
+        const newTasks: ITaskItem[] = tasks.filter(task => task.id !== taskId);
+        setTasks(newTasks);
+    }
+
 
     return (
         <div className={classes.taskCard}>
             <TaskForm onAddTask={onAddTask}/>
-            <TaskList tasks={tasks} onCheckTask={onCheckTask} />
-            <TaskCardFooter/>
+            <TaskList tasks={filteredTasks} onCheckTask={onCheckTask} onDeleteTask={onDeleteTask}/>
+            <TaskCardFooter tasks={tasks} filterMode={filterMode} setFilterMode={setFilterMode} onClearCompletedTasks={onClearCompletedTasks}/>
         </div>
     );
 };

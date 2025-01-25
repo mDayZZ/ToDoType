@@ -1,0 +1,20 @@
+.radioButton {
+  &__label {
+    cursor: pointer;
+    padding: 4px 10px;
+    border: 1px solid transparent;
+    transition-duration: var(--transition-duration);
+
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__input:checked + .radioButton__label {
+    border: 1px solid var(--color-lightbrand-color);
+    border-radius: 4px;
+  }
+
+
+}

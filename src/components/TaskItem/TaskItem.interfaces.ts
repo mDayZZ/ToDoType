@@ -1,8 +1,9 @@
-import {OnCheckTaskType} from "../TaskCard/TaskCard.interfaces.ts";
+import {OnCheckTaskType, OnDeleteTaskType} from "../TaskCard/TaskCard.interfaces.ts";
 
 export interface ITaskItemProps {
     task: ITaskItem,
     onCheckTask: OnCheckTaskType;
+    onDeleteTask: OnDeleteTaskType;
 }
 
 export interface ITaskItem {

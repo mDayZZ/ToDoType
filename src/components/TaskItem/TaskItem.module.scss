@@ -25,6 +25,11 @@
     font-weight: 300;
     color: var(--color-text-color);
     transition-duration: var(--transition-duration);
+    word-break: break-word;
+    overflow-wrap: break-word;
+    flex: 1 1 auto;
+    max-width: calc(100% - 70px);
+
   }
 
   &__text[data-iscompleted='true'] {

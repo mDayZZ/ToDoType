@@ -14,6 +14,6 @@ This Todo List application is a test project demonstrating the usage of modern w
 - **React:** For building the user interface
 - **React Hooks:** For managing state and side effects
 - **TypeScript:** For adding static type checking and improving code quality
-- **Jest:** For writing unit tests for core functionality
+- **Vitest, React testing library:** For writing unit tests for core functionality
 - **GitHub Actions:** For continuous integration and deployment (CI/CD)
 - **GitHub Pages:** For hosting the live app.

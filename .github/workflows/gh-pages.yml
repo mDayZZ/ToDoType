@@ -2,7 +2,19 @@ name: GitHub Pages Deploy
 
 on: [push]
 jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@
+      - name: Install npm deps
+        working-directory: ./
+        run: npm i
+      - name: Test
+        working-directory: ./
+        run: npm run test
+
   Build-and-Deploy:
+    needs: [Test]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,4 +30,5 @@ jobs:
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
           publish_dir: ./dist
+
 

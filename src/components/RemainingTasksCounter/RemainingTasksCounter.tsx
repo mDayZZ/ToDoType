@@ -1,5 +1,5 @@
 import {ITaskItem} from "../TaskItem/TaskItem.interfaces.ts";
-import {useRemainingTasksCounter} from "../../hooks/useRemainingTasksCounter.ts";
+import {useRemainingTasksCounter} from "../../hooks/useRemainingTasksCounter/useRemainingTasksCounter.ts";
 
 interface IRemainingTasksCounterProps {
     tasks: ITaskItem[]

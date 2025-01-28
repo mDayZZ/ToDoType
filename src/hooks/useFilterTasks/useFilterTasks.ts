@@ -1,11 +1,12 @@
-import {ITaskItem} from "../components/TaskItem/TaskItem.interfaces.ts";
+import {ITaskItem} from "../../components/TaskItem/TaskItem.interfaces.ts";
 import {Dispatch, SetStateAction, useMemo, useState} from "react";
 
-interface IUseFilterTasks {
-    (tasks: ITaskItem[]): [ITaskItem[], filterMode: string, setFilterMode: Dispatch<SetStateAction<string>>];
-}
+export type UseFilterTasksPropsType = ITaskItem[];
 
-export const useFilterTasks :IUseFilterTasks = (tasks) => {
+export type UseFilterTasksReturnType = [ITaskItem[], filterMode: string, setFilterMode: Dispatch<SetStateAction<string>>]
+
+
+export const useFilterTasks = (tasks: UseFilterTasksPropsType):UseFilterTasksReturnType  => {
     const [filterMode, setFilterMode] = useState('all');
 
     const filteredTasks = useMemo(() => {

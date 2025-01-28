@@ -1,5 +1,5 @@
-import {ITaskItem} from "../components/TaskItem/TaskItem.interfaces.ts";
-import {pluralize} from "../utils/pluralize/pluralize.ts";
+import {ITaskItem} from "../../components/TaskItem/TaskItem.interfaces.ts";
+import {pluralize} from "../../utils/pluralize/pluralize.ts";
 import {useMemo} from "react";
 
 interface IUseRemainingTasksCounter  {

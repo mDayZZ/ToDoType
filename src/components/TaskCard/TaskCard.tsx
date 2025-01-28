@@ -6,7 +6,7 @@ import {ITaskItem} from "../TaskItem/TaskItem.interfaces.ts";
 import {OnAddTaskType, OnCheckTaskType, OnDeleteTaskType} from "./TaskCard.interfaces.ts";
 import TaskCardFooter from "../TaskCardFooter/TaskCardFooter.tsx";
 import { v4 as uuidv4 } from 'uuid';
-import {useFilterTasks} from "../../hooks/useFilterTasks.ts";
+import {useFilterTasks} from "../../hooks/useFilterTasks/useFilterTasks.ts";
 
 const TaskCard = () => {
     const [tasks, setTasks] = useState<ITaskItem[]>(

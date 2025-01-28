@@ -12,7 +12,7 @@ const TaskItem = ({task, onCheckTask, onDeleteTask}: ITaskItemProps) => {
         onDeleteTask(task.id);
     };
     return (
-        <div className={classes.taskItem} style={classes} onClick={handleCheckTask}>
+        <div className={classes.taskItem} style={classes} onClick={handleCheckTask} data-testid='taskitem'>
             <TaskCheckbox className={classes.taskItem__checkbox} checked={isChecked} onChange={handleCheckTask}/>
             <p className={classes.taskItem__text} data-iscompleted={task.isCompleted}>{task.text}</p>
             <button className={classes.taskItem__clearButton} onClick={handleDeleteTask}><Clear fontSize='small'/></button>

@@ -17,3 +17,7 @@ This Todo List application is a test project demonstrating the usage of modern w
 - **Vitest, React testing library:** For writing unit tests for core functionality
 - **GitHub Actions:** For continuous integration and deployment (CI/CD)
 - **GitHub Pages:** For hosting the live app.
+
+
+## Check this out
+https://mdayzz.github.io/ToDoType
